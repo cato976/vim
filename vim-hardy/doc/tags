@@ -1,0 +1,15 @@
+'g:hardy_arduino_options'	hardy.txt	/*'g:hardy_arduino_options'*
+'g:hardy_arduino_path'	hardy.txt	/*'g:hardy_arduino_path'*
+'g:hardy_split_direction'	hardy.txt	/*'g:hardy_split_direction'*
+'g:hardy_window_name'	hardy.txt	/*'g:hardy_window_name'*
+'g:hardy_window_size'	hardy.txt	/*'g:hardy_window_size'*
+Hardy	hardy.txt	/*Hardy*
+Hardy-:ArduinoUpload	hardy.txt	/*Hardy-:ArduinoUpload*
+Hardy-:ArduinoVerify	hardy.txt	/*Hardy-:ArduinoVerify*
+HardyCommands	hardy.txt	/*HardyCommands*
+HardyContents	hardy.txt	/*HardyContents*
+HardyCredits	hardy.txt	/*HardyCredits*
+HardyLicense	hardy.txt	/*HardyLicense*
+HardyOptions	hardy.txt	/*HardyOptions*
+HardyTodo	hardy.txt	/*HardyTodo*
+hardy.txt	hardy.txt	/*hardy.txt*
