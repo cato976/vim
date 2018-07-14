@@ -9,6 +9,7 @@ set smarttab
 set number
 set relativenumber
 set cursorline
+set scrolloff=999
 
 
 " set listchars=space:·
@@ -36,6 +37,6 @@ let g:hardy_arduino_path = 'C:\Program Files (x86)\Arduino\arduino_debug.exe'
 let g:hardy_window_size = 15
 
 " Specify a directoty for plugins
-call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/4Evergreen4/vim-hardy.git'
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"Plug 'https://github.com/4Evergreen4/vim-hardy.git'
+"call plug#end()
