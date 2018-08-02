@@ -23,7 +23,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'powerline/powerline-fonts'
+Plugin 'powerline/powerline'
 "Plugin 'vim-syntastic/syntastic'
+Plugin 'sjl/badwolf'
+Plugin 'rakr/vim-one'
 
 
 call vundle#end()
@@ -31,27 +34,26 @@ filetype plugin indent on
 
 
 " Set up Powerline
-set rtp+=$HOME/appdata/roaming/python/python27/site-packages/powerline/bindings/vim/
+"set rtp+=$HOME/appdata/roaming/python/python27/site-packages/powerline/bindings/vim/
+set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 set showtabline=2
 set noshowmode
 set encoding=utf-8 
-"set fillchars+=stl:\ ,stlnc:\
-"set guifont=Liberation_Mono_for_Powerline:h10
 if has("gui_running")
     set guifont=Inconsolata_for_Powerline:h12i:cANSI
 endif
-"set guifont=Consolas\ for\ Powerline\ FixedD:h10:cANSI
-set t_Co=256
-
+"set t_Co=256
 "
+
+let g:powerline_config_overrides={'common': {'reload_config': 0}}
 "let g:powerline_pycmd="python"
 "let g:powerline_pycmd="py"    
 let g:Powerline_symbols = 'fancy'
 "let g:Powerline_mode_V="V·LINE"
-let g:Powerline_mode_cv="V·BLOCK"
-let g:Powerline_mode_S="S·LINE"
-let g:Powerline_mode_cs="S·BLOCK"
+"let g:Powerline_mode_cv="V·BLOCK"
+"let g:Powerline_mode_S="S·LINE"
+"let g:Powerline_mode_cs="S·BLOCK"
 
 
 "Set up syntastic
@@ -82,6 +84,13 @@ augroup END
 " set list
 
 "colorscheme slate
+colorscheme badwolf
+"colorscheme one
+
+set t_8b=^[[48;2;%lu;%lu;%lum
+set t_8f=^[[38;2;%lu;%lu;%lum
+
+syntax on
 
 let mapleader = ","
 nnoremap <leader>m [{y%
