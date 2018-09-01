@@ -10,6 +10,8 @@ set number
 set relativenumber
 "set cursorline
 set scrolloff=999
+set spell
+set spelllang=en_us
 
 " Set up for vundle
 filetype off
