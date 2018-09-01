@@ -29,6 +29,8 @@ Plugin 'powerline/powerline'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'sjl/badwolf'
 Plugin 'rakr/vim-one'
+"Plugin 'burnettk/vim-angular'
+Plugin 'leafgarland/typescript-vim'
 
 
 call vundle#end()
@@ -86,7 +88,7 @@ augroup END
 " set list
 
 "colorscheme slate
-colorscheme badwolf
+"colorscheme badwolf
 "colorscheme one
 
 set t_8b=^[[48;2;%lu;%lu;%lum
