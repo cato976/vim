@@ -10,6 +10,8 @@ set number
 set relativenumber
 "set cursorline
 set scrolloff=999
+set spell
+set spelllang=en_us
 
 " Set up for vundle
 filetype off
@@ -27,6 +29,8 @@ Plugin 'powerline/powerline'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'sjl/badwolf'
 Plugin 'rakr/vim-one'
+"Plugin 'burnettk/vim-angular'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
 
