@@ -31,8 +31,15 @@ Plugin 'sjl/badwolf'
 Plugin 'rakr/vim-one'
 "Plugin 'burnettk/vim-angular'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'OmniSharp/omnisharp-vim'
+"Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'w0rp/ale'
+Plugin 'janko-m/vim-test'
+Plugin 'cato976/omnisharp-vim'
 
 
 call vundle#end()
@@ -107,10 +114,18 @@ nnoremap <leader>rt :OmniSharpRunTests<cr>
 nnoremap <leader>rf :OmniSharpRunTestFixture<cr>
 nnoremap <leader>ra :OmniSharpRunAllTest<cr>
 nnoremap <leader>rl :OmniSharpRunLastTest<cr>
+nnoremap <leader>b :OmniSharpBuildAsync<cr>
 
 
 " OmniSharp won't work without this setting
 filetype plugin on
+let g:OmniSharp_server_type = 'v1'
+let g:OmniSharp_server_type = 'roslyn'
+let g:OmniSharp_host = "http://localhost:2000"
+let g:syntastic_cs_checkers = ['code_checker']
+
+"let g:OmniSharp_server_path = 'C:\omnisharp.http-win-x64\OmniSharp.exe'
+"let g:OmniSharp_port = 7000
 
 " Set the type lookup function to use the preview window instead of echoing it
 "let g:OmniSharp_typeLookupInPreview = 1
