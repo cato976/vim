@@ -119,13 +119,14 @@ nnoremap <leader>b :OmniSharpBuildAsync<cr>
 
 " OmniSharp won't work without this setting
 filetype plugin on
-let g:OmniSharp_server_type = 'v1'
+"let g:OmniSharp_server_type = 'v1'
 let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_host = "http://localhost:2000"
 let g:syntastic_cs_checkers = ['code_checker']
 
-"let g:OmniSharp_server_path = 'C:\omnisharp.http-win-x64\OmniSharp.exe'
-"let g:OmniSharp_port = 7000
+let g:OmniSharp_server_path = 'C:\omnisharp.http-win-x64\OmniSharp.exe'
+"let g:OmniSharp_server_path = 'C:\WS\Personal_Git\omnisharp-roslyn\bin\Debug\OmniSharp.Http.Driver\net461\OmniSharp.exe'
+let g:OmniSharp_port = 2000
 
 " Set the type lookup function to use the preview window instead of echoing it
 "let g:OmniSharp_typeLookupInPreview = 1
