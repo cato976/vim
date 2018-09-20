@@ -40,6 +40,7 @@ Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'w0rp/ale'
 Plugin 'janko-m/vim-test'
 Plugin 'cato976/omnisharp-vim'
+Plugin 'tpope/vim-unimpaired'
 
 
 call vundle#end()
