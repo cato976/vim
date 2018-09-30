@@ -57,17 +57,17 @@ set encoding=utf-8
 if has("gui_running")
     set guifont=Inconsolata_for_Powerline:h12i:cANSI
 endif
-set t_Co=256
+"set t_Co=256
 
 
 let g:powerline_config_overrides={'common': {'reload_config': 0}}
-"let g:powerline_pycmd="python"
-"let g:powerline_pycmd="py"    
+let g:powerline_pycmd="python"
+let g:powerline_pycmd="py"    
 let g:Powerline_symbols = 'fancy'
-"let g:Powerline_mode_V="V·LINE"
-"let g:Powerline_mode_cv="V·BLOCK"
-"let g:Powerline_mode_S="S·LINE"
-"let g:Powerline_mode_cs="S·BLOCK"
+let g:Powerline_mode_V="V·LINE"
+let g:Powerline_mode_cv="V·BLOCK"
+let g:Powerline_mode_S="S·LINE"
+let g:Powerline_mode_cs="S·BLOCK"
 
 
 "Set up syntastic
@@ -97,12 +97,14 @@ augroup END
 " set listchars=space:·
 " set list
 
-"colorscheme slate
-"colorscheme badwolf
-colorscheme one
+""colorscheme slate
+""colorscheme badwolf
+"colorscheme one
+"highlight Normal ctermfg=grey ctermbg=black
+"set background=dark
 
-set t_8b=^[[48;2;%lu;%lu;%lum
-set t_8f=^[[38;2;%lu;%lu;%lum
+"set t_8b=^[[48;2;%lu;%lu;%lum
+"set t_8f=^[[38;2;%lu;%lu;%lum
 
 syntax on
 
@@ -125,7 +127,7 @@ let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_host = "http://localhost:2000"
 let g:syntastic_cs_checkers = ['code_checker']
 
-let g:OmniSharp_server_path = 'C:\omnisharp.http-win-x64\OmniSharp.exe'
+let g:OmniSharp_server_path = 'C:\Users\andre\.omnisharp/OmniSharp.exe'
 "let g:OmniSharp_server_path = 'C:\WS\Personal_Git\omnisharp-roslyn\bin\Debug\OmniSharp.Http.Driver\net461\OmniSharp.exe'
 let g:OmniSharp_port = 2000
 
