@@ -26,9 +26,13 @@ set MBYTE=yes
 ::
 :: :: Enable Python scripting
 set DYNAMIC_PYTHON=yes
-::set PYTHON=C:\Users\catoan\AppData\Local\Programs\Python\Python37
-set PYTHON=C:\Python27amd64
+::set PYTHON=C:\Users\andre\AppData\Local\Programs\Python\Python37
+::set PYTHON=C:\Python27amd64
+set PYTHON=C:\Python27
 set PYTHON_VER=27
+set DYNAMIC_PYTHON3=yes
+set PYTHON3=C:\Users\andre\AppData\Local\Programs\Python\Python37
+set PYTHON3_VER=37
 ::
 
 
