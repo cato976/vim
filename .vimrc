@@ -227,7 +227,8 @@ let g:hardy_arduino_path = 'C:\Program Files (x86)\Arduino\arduino_debug.exe'
 "let g:hardy_arduino_options = '.\template.ino'
 let g:hardy_window_size = 15
 
-" Specify a directoty for plugins
-"call plug#begin('~/.vim/plugged')
-"Plug 'https://github.com/4Evergreen4/vim-hardy.git'
-"call plug#end()
+if has("autocmd")
+    augroup templates
+        autocmd BufNewFile *.cs 0r ~/.vim/templates/skeleton.cs | normal! w 
+    augroup END
+endif
