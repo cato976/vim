@@ -41,6 +41,7 @@ Plugin 'w0rp/ale'
 Plugin 'janko-m/vim-test'
 Plugin 'cato976/omnisharp-vim'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'cato976/vim-spotifysearch'
 
 
 call vundle#end()
@@ -232,3 +233,7 @@ if has("autocmd")
         autocmd BufNewFile *.cs 0r ~/.vim/templates/skeleton.cs | normal! w 
     augroup END
 endif
+
+" Spotify
+let g:spotify_country_code = 'US'
+let g:spotify_playpause_key = "<F10>"
