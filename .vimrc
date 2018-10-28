@@ -62,8 +62,8 @@ endif
 
 
 let g:powerline_config_overrides={'common': {'reload_config': 0}}
-let g:powerline_pycmd="python"
-let g:powerline_pycmd="py"    
+let g:powerline_pycmd="python3"
+let g:powerline_pycmd="py3"    
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_mode_V="V·LINE"
 let g:Powerline_mode_cv="V·BLOCK"
