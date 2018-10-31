@@ -49,16 +49,16 @@ filetype plugin indent on
 
 
 " Set up Powerline
-"set rtp+=$HOME/appdata/roaming/python/python27/site-packages/powerline/bindings/vim/
-set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
-set laststatus=2
-set showtabline=2
-set noshowmode
-set encoding=utf-8 
-if has("gui_running")
-    set guifont=Inconsolata_for_Powerline:h12i:cANSI
+if !has("nvim")
+    set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
+    set laststatus=2
+    set showtabline=2
+    set noshowmode
+    set encoding=utf-8 
+    if has("gui_running")
+        set guifont=Inconsolata_for_Powerline:h12i:cANSI
+    endif
 endif
-"set t_Co=256
 
 
 let g:powerline_config_overrides={'common': {'reload_config': 0}}
@@ -227,6 +227,9 @@ let g:hardy_arduino_path = 'C:\Program Files (x86)\Arduino\arduino_debug.exe'
 "let g:hardy_window_name = '___MY_Arduino_Window___'
 "let g:hardy_arduino_options = '.\template.ino'
 let g:hardy_window_size = 15
+
+set background=dark
+colorscheme one
 
 if has("autocmd")
     augroup templates
