@@ -10,7 +10,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'powerline/powerline-fonts'
-Plugin 'powerline/powerline'
 Plugin 'sjl/badwolf'
 Plugin 'rakr/vim-one'
 Plugin 'leafgarland/typescript-vim'
@@ -32,6 +31,8 @@ else
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
 Plugin 'neomake/neomake'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 " }}}
  
@@ -64,28 +65,17 @@ colorscheme one
 
 " }}}
 
-" Powerline ----------------------------------------------------------------------{{{
-" Set up Powerline
-if !has("nvim")
-    set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
-    set laststatus=2
-    set showtabline=2
-    set noshowmode
-    set encoding=utf-8 
-    if has("gui_running")
-        set guifont=Inconsolata_for_Powerline:h12i:cANSI
-    endif
+" Airline ----------------------------------------------------------------------{{{
+" Set up Airline
+set laststatus=2
+set showtabline=2
+set noshowmode
+set encoding=utf-8 
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
+if has("gui_running")
+    set guifont=Inconsolata_for_Powerline:h12i:cANSI
 endif
-
-
-let g:powerline_config_overrides={'common': {'reload_config': 0}}
-let g:powerline_pycmd="python"
-let g:powerline_pycmd="py3"    
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_mode_V="V·LINE"
-let g:Powerline_mode_cv="V·BLOCK"
-let g:Powerline_mode_S="S·LINE"
-let g:Powerline_mode_cs="S·BLOCK"
 " }}}
 
 "" File Browser ----------------------------------------------------------------------{{{
