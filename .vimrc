@@ -42,8 +42,14 @@ Plugin 'janko-m/vim-test'
 Plugin 'cato976/omnisharp-vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'cato976/vim-spotifysearch'
-
-
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+Plugin 'neomake/neomake'
 call vundle#end()
 filetype plugin indent on
 
@@ -60,6 +66,8 @@ if !has("nvim")
     endif
 endif
 
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog="C:\\Users\\andre\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
 
 let g:powerline_config_overrides={'common': {'reload_config': 0}}
 let g:powerline_pycmd="python3"
@@ -112,6 +120,7 @@ syntax on
 let mapleader = ","
 nnoremap <leader>m [{y%
 nnoremap <leader>p mm%x`mx
+nnoremap <leader>c :Neomake!<CR>
 
 " OmniSharp bindings
 nnoremap <leader>rt :OmniSharpRunTests<cr>
