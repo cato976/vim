@@ -33,6 +33,7 @@ endif
 Plugin 'neomake/neomake'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'machakann/vim-highlightedyank'
 call vundle#end()
 " }}}
  
@@ -63,6 +64,20 @@ filetype plugin indent on
 set background=dark
 colorscheme one
 
+" }}}
+
+" Neovim Basics ----------------------------------------------------------------------{{{
+if has("nvim")
+    set inccommand=split
+endif
+" }}}
+
+" Highlighed Yank Plugin ----------------------------------------------------------------------{{{
+if has("vim")
+    if !exist('##TextYankPost')
+        map y <Plug>(highlightedyank)
+    endif
+endif
 " }}}
 
 " Airline ----------------------------------------------------------------------{{{
@@ -230,4 +245,3 @@ endif
 let g:spotify_country_code = 'US'
 let g:spotify_playpause_key = "<F10>"
 " }}}
-
