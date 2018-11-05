@@ -57,6 +57,7 @@ set relativenumber
 set scrolloff=999
 set spell
 set spelllang=en_us
+set incsearch
 syntax on
 
 let g:deoplete#enable_at_startup = 1
@@ -70,6 +71,11 @@ colorscheme one
 if has("nvim")
     set inccommand=split
 endif
+" }}}
+
+" Navigation ----------------------------------------------------------------------{{{
+nnoremap <C-n> :cnext<CR>
+nnoremap <C-b> :cprev<CR>
 " }}}
 
 " Highlighed Yank Plugin ----------------------------------------------------------------------{{{
