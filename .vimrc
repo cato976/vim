@@ -57,7 +57,6 @@ set relativenumber
 set scrolloff=999
 set spell
 set spelllang=en_us
-set incsearch
 syntax on
 
 let g:deoplete#enable_at_startup = 1
