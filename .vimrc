@@ -19,7 +19,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'w0rp/ale'
-Plugin 'janko-m/vim-test'
+Plugin 'cato976/vim-test'
 Plugin 'cato976/omnisharp-vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'cato976/vim-spotifysearch'
@@ -70,11 +70,6 @@ colorscheme one
 if has("nvim")
     set inccommand=split
 endif
-" }}}
-
-" Navigation ----------------------------------------------------------------------{{{
-nnoremap <C-n> :cnext<CR>
-nnoremap <C-b> :cprev<CR>
 " }}}
 
 " Highlighed Yank Plugin ----------------------------------------------------------------------{{{
@@ -249,4 +244,10 @@ endif
 " Spotify
 let g:spotify_country_code = 'US'
 let g:spotify_playpause_key = "<F10>"
+" }}}
+
+" Test ----------------------------------------------------------------------{{{
+if has('nvim')
+    let test#strategy="neovim"
+endif
 " }}}
