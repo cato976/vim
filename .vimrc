@@ -1,5 +1,4 @@
-" Plugins ----------------------------------------------------------------------{{{
-" Set up for vundle
+" Plugins ----------------------------------------------------------------------{{{ Set up for vundle
 filetype off
 set rtp+=$HOME/.vim/bundle/Vundle.vim/
 call vundle#begin('$HOME/.vim/bundle/')
@@ -24,11 +23,11 @@ Plugin 'cato976/omnisharp-vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'cato976/vim-spotifysearch'
 if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
+    Plugin 'Shougo/deoplete.nvim'
+    Plugin 'roxma/nvim-yarp'
+    Plugin 'roxma/vim-hug-neovim-rpc'
 endif
 Plugin 'neomake/neomake'
 Plugin 'vim-airline/vim-airline'
@@ -36,7 +35,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'machakann/vim-highlightedyank'
 call vundle#end()
 " }}}
- 
+
 " Basics  ----------------------------------------------------------------------{{{
 
 " vimrc folds
@@ -109,7 +108,6 @@ augroup END
 
 " Leader ----------------------------------------------------------------------{{{
 let mapleader = ","
-nnoremap <leader>m [{y%
 nnoremap <leader>p mm%x`mx
 nnoremap <leader>c :Neomake!<CR>
 " }}}
@@ -130,7 +128,7 @@ let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_host = "http://localhost:2000"
 let g:syntastic_cs_checkers = ['code_checker']
 
-let g:OmniSharp_server_path = 'C:\Users\andre\.omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_path = 'C:\Users\catoan\.omnisharp/OmniSharp.exe'
 "let g:OmniSharp_server_path = 'C:\WS\Personal_Git\omnisharp-roslyn\bin\Debug\OmniSharp.Http.Driver\net461\OmniSharp.exe'
 let g:OmniSharp_port = 2000
 
@@ -250,4 +248,19 @@ let g:spotify_playpause_key = "<F10>"
 if has('nvim')
     let test#strategy="neovim"
 endif
+" }}}
+
+" Folding ----------------------------------------------------------------------{{{
+if !exists("autocommands_loaded")
+    let autocommands_loaded = 1
+
+    " setup folding
+    "autocmd BufNewFile,BufRead *.cs set foldmethod=syntax
+    au FileType cs set omnifunc=syntaxcomplete#Complete
+    au FileType cs set foldmethod=marker
+    au FileType cs set foldmarker={,}
+    "au FileType cs set foldlevelstart=2 
+
+endif
+
 " }}}
