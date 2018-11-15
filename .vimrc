@@ -16,6 +16,8 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-manager'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'w0rp/ale'
 Plugin 'cato976/vim-test'
@@ -33,6 +35,10 @@ Plugin 'neomake/neomake'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'machakann/vim-highlightedyank'
+Plugin 'OrangeT/vim-csharp'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/VimFold4C'
+Plugin 'craigemery/vim-autotag'
 call vundle#end()
 " }}}
 
@@ -208,7 +214,7 @@ nnoremap <Leader>sp :OmniSharpStopServer<CR>
 nnoremap <Leader>th :OmniSharpHighlightTypes<CR>
 
 " Enable snippet completion
-" let g:OmniSharp_want_snippet=1
+let g:OmniSharp_want_snippet=1
 " }}}
 
 " Auto-Complete ----------------------------------------------------------------------{{{
@@ -250,17 +256,19 @@ if has('nvim')
 endif
 " }}}
 
-" Folding ----------------------------------------------------------------------{{{
-if !exists("autocommands_loaded")
-    let autocommands_loaded = 1
+" AutoTags ----------------------------------------------------------------------{{{
+let g:autotagTagsFile="tags"
+" }}}
 
-    " setup folding
-    "autocmd BufNewFile,BufRead *.cs set foldmethod=syntax
-    au FileType cs set omnifunc=syntaxcomplete#Complete
-    au FileType cs set foldmethod=marker
-    au FileType cs set foldmarker={,}
-    "au FileType cs set foldlevelstart=2 
+" UltiSnips ----------------------------------------------------------------------{{{
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" }}}
 
-endif
-
+" vim-addon-manager ---------------------------------------------------------------------{{{
+set nocompatible | filetype indent plugin on | syn on
+set runtimepath+=~/.vim/bundle/vim-addon-manager
 " }}}
