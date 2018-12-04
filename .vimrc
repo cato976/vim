@@ -118,6 +118,10 @@ nnoremap <leader>p mm%x`mx
 nnoremap <leader>c :Neomake!<CR>
 " }}}
 
+" My Bindings ----------------------------------------------------------------------{{{
+nnoremap <leader>ve :Vexplore<cr>
+" }}}
+
 " OmniSharp----------------------------------------------------------------------{{{ 
 " OmniSharp bindings
 nnoremap <leader>rt :OmniSharpRunTests<cr>
@@ -142,7 +146,7 @@ let g:OmniSharp_port = 2000
 "let g:OmniSharp_typeLookupInPreview = 1
 
 " Timeout in seconds to wait for a response from the server
-let g:OmniSharp_timeout = 5
+let g:OmniSharp_timeout = 10
 
 " Don't autoselect first omnicomplete option, show options even if there is only
 " one (so the preview documentation is accessible). Remove 'preview' if you
