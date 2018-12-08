@@ -74,6 +74,10 @@ colorscheme one
 " Neovim Basics ----------------------------------------------------------------------{{{
 if has("nvim")
     set inccommand=split
+    let g:neomake_open_list=2
+    autocmd! BufWritePost * Neomake
+    au FileType cs let g:neomake_cs_enabled_makers = ['msbuild']
+    "call neomake#configure#automake('w')
 endif
 " }}}
 
