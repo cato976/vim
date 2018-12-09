@@ -142,7 +142,7 @@ let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_host = "http://localhost:2000"
 let g:syntastic_cs_checkers = ['code_checker']
 
-let g:OmniSharp_server_path = 'C:\Users\catoan\.omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_path = 'C:\Users\andre\.omnisharp/OmniSharp.exe'
 "let g:OmniSharp_server_path = 'C:\WS\Personal_Git\omnisharp-roslyn\bin\Debug\OmniSharp.Http.Driver\net461\OmniSharp.exe'
 let g:OmniSharp_port = 2000
 
@@ -247,7 +247,13 @@ let g:hardy_window_size = 15
 " Templates ----------------------------------------------------------------------{{{
 if has("autocmd")
     augroup templates
-        autocmd BufNewFile *.cs 0r ~/.vim/templates/skeleton.cs | normal! w 
+        au!
+        " read in template files
+        autocmd BufNewFile *.cs execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
+        " parse special text in the templates after the read
+        autocmd BufNewFile * %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
+        " search for NAMESPACE to get ready to replace it
+        autocmd BufNewFile *.cs execute "normal! gg/NAMESPACE\<CR>"
     augroup END
 endif
 " }}}
