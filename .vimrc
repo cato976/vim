@@ -246,6 +246,10 @@ let g:hardy_window_size = 15
 
 " Templates ----------------------------------------------------------------------{{{
 if has("autocmd")
+    function! AddToProjectFile(projectPath, filePath)
+        echom system("AddFileToProject.exe --PathToProjectFile=" . a:projectPath . shellescape(' --NewFilePath=') . a:filePath)
+    endfunction
+
     augroup templates
         au!
         " read in template files
@@ -254,6 +258,8 @@ if has("autocmd")
         autocmd BufNewFile * %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
         " search for NAMESPACE to get ready to replace it
         autocmd BufNewFile *.cs execute "normal! gg/NAMESPACE\<CR>"
+        autocmd BufNewFile *.cs execute "write"
+        autocmd BufNewFile *.cs call AddToProjectFile(expand('%:p'), expand('%'))
     augroup END
 endif
 " }}}
