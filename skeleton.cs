@@ -1,6 +1,6 @@
-namespace Namespace
+namespace NAMESPACE
 {
-    class Class1
+    class [:VIM_EVAL:]expand('%:t:r')[:END_EVAL:]
     {
     }
 }
