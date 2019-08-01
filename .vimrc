@@ -26,6 +26,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'cato976/vim-spotifysearch'
 if has('nvim')
     Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plugin 'neoclide/coc.nvim', { 'do': 'yarn intstall --frozen-lockfile'}
 else
     Plugin 'Shougo/deoplete.nvim'
     Plugin 'roxma/nvim-yarp'
@@ -39,6 +40,8 @@ Plugin 'OrangeT/vim-csharp'
 Plugin 'LucHermitte/lh-vim-lib'
 Plugin 'LucHermitte/VimFold4C'
 Plugin 'craigemery/vim-autotag'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ianks/vim-tsx'
 call vundle#end()
 " }}}
 
@@ -69,6 +72,8 @@ filetype plugin indent on
 set background=dark
 colorscheme one
 
+
+
 " }}}
 
 " Neovim Basics ----------------------------------------------------------------------{{{
@@ -77,7 +82,10 @@ if has("nvim")
     let g:neomake_open_list=2
     autocmd! BufWritePost * Neomake
     au FileType cs let g:neomake_cs_enabled_makers = ['msbuild']
-    "call neomake#configure#automake('w')
+    " python
+    let g:python_host_prog = 'C:/Python27amd64/python2.7.exe'
+    let g:python3_host_prog = "C:/Users/catoan/AppData/Local/Programs/Python/Python37/python3.7.exe"
+    let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-emmet', 'coc-tslint', 'coc-prettier']
 endif
 " }}}
 
@@ -112,7 +120,7 @@ let g:netrw_winsize=25
 let g:netrw_list_hide=netrw_gitignore#Hide()
 augroup ProjectDrawer
     autocmd!
-    autocmd VimEnter * :Vexplore
+    autocmd VimEnter * :NERDTree
 augroup END
 " }}}
 
@@ -142,7 +150,7 @@ let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_host = "http://localhost:2000"
 let g:syntastic_cs_checkers = ['code_checker']
 
-let g:OmniSharp_server_path = 'C:\Users\andre\.omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_path = 'C:\Users\catoan\.omnisharp/OmniSharp.exe'
 "let g:OmniSharp_server_path = 'C:\WS\Personal_Git\omnisharp-roslyn\bin\Debug\OmniSharp.Http.Driver\net461\OmniSharp.exe'
 let g:OmniSharp_port = 2000
 
