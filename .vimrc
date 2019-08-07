@@ -83,7 +83,6 @@ if has("nvim")
     autocmd! BufWritePost * Neomake
     au FileType cs let g:neomake_cs_enabled_makers = ['msbuild']
     " python
-    let g:python_host_prog = 'C:/Python27amd64/python2.7.exe'
     let g:python3_host_prog = "C:/Users/catoan/AppData/Local/Programs/Python/Python37/python3.7.exe"
     let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-emmet', 'coc-tslint', 'coc-prettier']
 endif
